@@ -42,6 +42,9 @@ use Illuminate\Support\Facades\Auth;
     // Tag Page
     Route::get('/tag/{tag}', [HomepageController::class, 'viewImagesWithTag'])->name('tag.images');
 
+    // Author Page
+    Route::get('/author/{author}', [HomepageController::class, 'authorPage'])->name('author.page');
+
     // Authentication Routes
     Auth::routes();
 

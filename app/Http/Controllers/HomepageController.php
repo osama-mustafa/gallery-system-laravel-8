@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Image;
 use App\Models\Tag;
+use App\Models\User;
+
 
 class HomepageController extends Controller
 {
@@ -70,6 +72,15 @@ class HomepageController extends Controller
         return view('front.tag-page')->with([
             'tag' => $tag
         ]); 
+    }
+
+    public function authorPage($userName)
+    {
+        $user = User::where('name', $userName)->first();
+        return view('front.author-page')->with([
+            'user' => $user
+        ]);
+
     }
 
 }

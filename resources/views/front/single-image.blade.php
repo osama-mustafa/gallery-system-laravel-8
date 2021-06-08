@@ -47,7 +47,10 @@
                     </div>
                     <div class="mb-4">
                         <h4 class="tm-text-gray-dark mt-3">Uploaded By</h4>
-                        <p>{{ $image->user->name }}</p>
+                        <p>
+                            <a href="{{ route('author.page', ['author' => $image->user->name]) }}">{{ $image->user->name }}</a>
+                        </p>
+                            
                     </div>
 
                     <div class="mb-4">
