@@ -22,27 +22,30 @@
 
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $user->name }}">
+                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $user->name) }}">
                         @error('name')
-                            <p class="text-danger">
-                                <small>
-                                    {{ $message }}
-                                </small>
-                            </p>
-                        @enderror
+                        <p class="text-danger">
+                            <small>
+                                {{ $message }}
+                            </small>
+                        </p>
+                    @enderror
+
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ $user->email }}">
+                        <input type="email" name="email" class="form-control @error('email') is-invalid  @enderror" value="{{ old('email', $user->email) }}">
                         @error('email')
-                            <p class="text-danger">
-                                <small>
-                                    {{ $message }}
-                                </small>
-                            </p>
-                        @enderror
+                        <p class="text-danger">
+                            <small>
+                                {{ $message }}
+                            </small>
+                        </p>
+                    @enderror
+
                     </div>
+
 
 
                     <div class="form-group">

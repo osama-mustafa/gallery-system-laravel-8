@@ -22,7 +22,7 @@
 
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $user->name }}" required>
+                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $user->name) }}" required>
                         @error('name')
                             <p class="text-danger">
                                 <small>
@@ -34,7 +34,7 @@
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ $user->email }}" required>
+                        <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email', $user->email) }}" required>
                         @error('email')
                             <p class="text-danger">
                                 <small>

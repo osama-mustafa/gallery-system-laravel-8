@@ -65,7 +65,10 @@ class UserController extends Controller
     {
         $user = User::findOrFail($userId);
         $request->validate([
-            'name' => 'required',
+            'name' => [
+                'required',
+                Rule::unique('users')->ignore($user->id)
+            ],
             'email' => [
                 'required',
                 Rule::unique('users')->ignore($user->id)

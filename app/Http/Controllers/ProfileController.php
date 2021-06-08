@@ -40,7 +40,10 @@ class ProfileController extends Controller
     {
         $user = auth()->user();
         $request->validate([
-            'name'  => 'required',
+            'name'  => [
+                'required',
+                Rule::unique('users')->ignore($user->id)
+            ],
             'email' => [
                 'required',
                 Rule::unique('users')->ignore($user->id)
