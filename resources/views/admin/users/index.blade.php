@@ -32,7 +32,9 @@
                         <tbody>
                             @foreach ($users as $user)
                             <tr>
-                                <td>{{ $user->name }}</td>
+                                <td>
+                                    <a href="{{ route('author.page', ['author' => $user->name]) }}">{{ $user->name }}</a>
+                                </td>
                                 <td>{{ $user->images->count() }}</td>
                                 <td>
                                     @if ($user->admin == true)
