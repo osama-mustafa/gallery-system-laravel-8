@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TagRequest;
 use App\Models\Tag;
 use App\Models\Image;
 
@@ -31,12 +32,8 @@ class TagController extends Controller
     }
 
    
-    public function store(Request $request)
+    public function store(TagRequest $request)
     {
-        $request->validate([
-            'name' => 'required'
-        ]);
-
         Tag::create([
             'name' => $request->name
         ]);
