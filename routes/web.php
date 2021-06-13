@@ -73,20 +73,15 @@ use Illuminate\Support\Facades\Auth;
 
 // Admin Routes
 
-    // Images
     Route::resource('images', ImageController::class);
 
-    // Users
     Route::resource('tags', TagController::class);
 
-    // Users
     Route::resource('users', UserController::class);
 
-    // Add Or Remove User From Admin
     Route::post('/add-to-admins/{user}', [AdminController::class, 'AddToAdmins'])->name('make.admin');
     Route::post('/remove-from-admins/{user}', [AdminController::class, 'removeFromAdmins'])->name('remove.from.admin');
 
-    // Trashed Images
     Route::get('/trashed/images', [ImageController::class, 'viewTrashedImages'])->name('trashed.images');
     Route::PUT('/trashed/images/restore/{image}', [ImageController::class, 'restoreTrashedImage'])->name('restore.trashed.image');
     Route::delete('/trashed/images/delete/{image}', [ImageController::class, 'deleteTrashedImage'])->name('delete.trashed.image');
