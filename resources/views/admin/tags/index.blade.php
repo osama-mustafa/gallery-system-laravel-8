@@ -8,7 +8,6 @@
 
             <div class="col-md-5 mt-3">
 
-                {{-- Upload Success Message --}}
                 @if (session('message'))
                     <div class="alert alert-success">
                         {{ session('message') }}
@@ -53,7 +52,7 @@
                     @csrf 
                     @method('POST')
                     <div class="form-group">
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="for example: cat, car ..." required>
+                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="for example: cat, car ..." >
                         @error('name')
                             <p class="text-danger">
                                 <small>
