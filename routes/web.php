@@ -45,7 +45,6 @@ use Illuminate\Support\Facades\Auth;
     // Author Page
     Route::get('/author/{author}', [HomepageController::class, 'authorPage'])->name('author.page');
 
-    // Authentication Routes
     Auth::routes();
 
 
