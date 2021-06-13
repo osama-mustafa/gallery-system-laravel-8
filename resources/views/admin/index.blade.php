@@ -4,9 +4,7 @@
 @section('content')
     <div class="container">
         <div class="row mt-3">
-
             @if (auth()->user()->admin == true)    
-            
                 <div class="col-xl-3 col-md-6">
                     <div class="card bg-secondary text-white mb-4">
                         <div class="card-body"><i class="fas fa-users"></i> Users: {{ $users->count() }}</div>
@@ -56,10 +54,7 @@
                         <a href="{{ route('images.create') }}" class="btn btn-secondary">Upload now</a>
                     </h4>    
                 </div>
-
-
             @endif
-
         </div>
     </div>
 @endsection
