@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreImageRequest;
+use App\Http\Requests\ImageRequest;
 use App\Models\Image;
 use App\Models\Tag;
 use Illuminate\Http\Request;
@@ -38,7 +38,7 @@ class ImageController extends Controller
     }
 
 
-    public function store(StoreImageRequest $request)
+    public function store(ImageRequest $request)
     {
         $imageName     = $request->file->getClientOriginalName();
         $imageNewName  = time() . $imageName;
