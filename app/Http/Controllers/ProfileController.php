@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\User;
 
+use App\Http\Requests\ProfileRequest;
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Image;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
@@ -36,19 +37,9 @@ class ProfileController extends Controller
     }
 
 
-    public function updateProfile(Request $request)
+    public function updateProfile(ProfileRequest $request)
     {
         $user = auth()->user();
-        $request->validate([
-            'name'  => [
-                'required',
-                Rule::unique('users')->ignore($user->id)
-            ],
-            'email' => [
-                'required',
-                Rule::unique('users')->ignore($user->id)
-            ]
-        ]);
         $user->name     = $request->name;
         $user->email    = $request->email;
         $user->save();
