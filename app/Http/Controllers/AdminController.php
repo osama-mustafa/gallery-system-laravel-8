@@ -7,9 +7,9 @@ use App\Models\User;
 
 class AdminController extends Controller
 {
-    public function AddToAdmins($id) 
+    public function AddToAdmins($userId) 
     {
-        $user = User::find($id);
+        $user = User::findOrFail($userId);
         $user->admin = true;
         $user->save();
         return back()->with([
@@ -17,9 +17,9 @@ class AdminController extends Controller
         ]);
     }
 
-    public function removeFromAdmins($id)
+    public function removeFromAdmins($userId)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($userId);
         $user->admin = false;
         $user->save();
         return back()->with([
